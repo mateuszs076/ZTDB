@@ -23,31 +23,31 @@ namespace ZTDB.SQLDatabase.Models
         public decimal PlannedDepartureTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal ActualDepartureTime { get; set; }
+        public decimal? ActualDepartureTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal DepartureDelay { get; set; }
+        public decimal? DepartureDelay { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal TaxiOut { get; set; }
+        public decimal? TaxiOut { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal TaxiIn { get; set; }
+        public decimal? TaxiIn { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal WheelsOn { get; set; }
+        public decimal? WheelsOn { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal WheelsOff { get; set; }
+        public decimal? WheelsOff { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
         public decimal PlannedArrivalTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal ActualArrivalTime { get; set; }
+        public decimal? ActualArrivalTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal ArrivalDelay { get; set; }
+        public decimal? ArrivalDelay { get; set; }
 
         public int? CancelCodeId { get; set; }
         public CancelCode CancelCode { get; set; }
@@ -62,10 +62,10 @@ namespace ZTDB.SQLDatabase.Models
         public decimal ActualElapsedTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal AirTime { get; set; }
+        public decimal? AirTime { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
-        public decimal Distance { get; set; }
+        public decimal? Distance { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]
         public decimal? CarrierDelay { get; set; }

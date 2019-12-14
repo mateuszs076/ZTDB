@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZTDB.SQLDatabase;
 
 namespace ZTDB.SQLDatabase.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    partial class SQLContextModelSnapshot : ModelSnapshot
+    [Migration("20191214193901_ChangesInFlights")]
+    partial class ChangesInFlights
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,7 +160,7 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<decimal>("ActualElapsedTime")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("AirTime")
+                    b.Property<decimal>("AirTime")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<int>("AirlineId")
@@ -180,7 +182,7 @@ namespace ZTDB.SQLDatabase.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("Distance")
+                    b.Property<decimal>("Distance")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<decimal>("Diverted")

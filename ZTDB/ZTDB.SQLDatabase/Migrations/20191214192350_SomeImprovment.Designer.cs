@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZTDB.SQLDatabase;
 
 namespace ZTDB.SQLDatabase.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    partial class SQLContextModelSnapshot : ModelSnapshot
+    [Migration("20191214192350_SomeImprovment")]
+    partial class SomeImprovment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,22 +151,22 @@ namespace ZTDB.SQLDatabase.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal?>("ActualArrivalTime")
+                    b.Property<decimal>("ActualArrivalTime")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("ActualDepartureTime")
+                    b.Property<decimal>("ActualDepartureTime")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<decimal>("ActualElapsedTime")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("AirTime")
+                    b.Property<decimal>("AirTime")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<int>("AirlineId")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("ArrivalDelay")
+                    b.Property<decimal>("ArrivalDelay")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<int?>("CancelCodeId")
@@ -173,14 +175,14 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<decimal?>("CarrierDelay")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("DepartureDelay")
+                    b.Property<decimal>("DepartureDelay")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<int?>("DestinationLocationId")
                         .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("Distance")
+                    b.Property<decimal>("Distance")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<decimal>("Diverted")
@@ -214,19 +216,19 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<decimal?>("SecurityDelay")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("TaxiIn")
+                    b.Property<decimal>("TaxiIn")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("TaxiOut")
+                    b.Property<decimal>("TaxiOut")
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<decimal?>("WeatherDelay")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("WheelsOff")
+                    b.Property<decimal>("WheelsOff")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<decimal?>("WheelsOn")
+                    b.Property<decimal>("WheelsOn")
                         .HasColumnType("Numeric(18,2)");
 
                     b.HasKey("Id");

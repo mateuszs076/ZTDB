@@ -25,11 +25,13 @@ namespace ZTDB.SQLDatabase
             modelBuilder.Entity<Flight>()
                 .HasOne(i => i.OriginLocation)
                 .WithMany(c => c.OriginFlights)
+                .IsRequired()
                 .HasForeignKey(a => a.OriginLocationId)
                 .OnDelete(DeleteBehavior.NoAction);
             modelBuilder.Entity<Flight>()
                 .HasOne(i => i.DestinationLocation)
                 .WithMany(c => c.DestinationFlights)
+                .IsRequired()
                 .HasForeignKey(a => a.DestinationLocationId)
                 .OnDelete(DeleteBehavior.NoAction);
             modelBuilder.Entity<Flight>()
@@ -40,7 +42,6 @@ namespace ZTDB.SQLDatabase
             modelBuilder.Entity<Flight>()
                 .HasOne(i => i.CancelCode)
                 .WithMany(c => c.Flights)
-                .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
