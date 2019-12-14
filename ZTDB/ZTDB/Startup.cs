@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ZTDB.SQLDatabase;
 
 namespace ZTDB
 {
@@ -16,6 +18,10 @@ namespace ZTDB
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            using (var context = new SQLContext())
+            {
+                context.Database.Migrate();
+            }
         }
 
         public IConfiguration Configuration { get; }
