@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ZTDB.SQLDatabase.Models
 {
@@ -8,5 +9,7 @@ namespace ZTDB.SQLDatabase.Models
         public int Id { get; set; }
 
         public string Code { get; set; }
+
+        public virtual List<Flight> Flights { get; set; }
     }
 }

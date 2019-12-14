@@ -14,9 +14,9 @@ namespace ZTDB.SQLDatabase.Models
         public int AirlineId { get; set; }
         public Airline Airline { get; set; }
         public int OpCarrierFlightNumber { get; set; }
-        public int OriginLocationId { get; set; }
+        public int? OriginLocationId { get; set; }
         public Location OriginLocation { get; set; }
-        public int DestinationLocationId { get; set; }
+        public int? DestinationLocationId { get; set; }
         public Location DestinationLocation { get; set; }
 
         [Column(TypeName = "Numeric(18,2)")]

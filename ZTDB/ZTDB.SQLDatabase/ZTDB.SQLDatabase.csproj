@@ -5,6 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191214161855_AddActualDataTables.cs" />
+    <Compile Remove="Migrations\20191214161855_AddActualDataTables.Designer.cs" />
+    <Compile Remove="Migrations\20191214164250_AddAirlines.cs" />
+    <Compile Remove="Migrations\20191214164250_AddAirlines.Designer.cs" />
+    <Compile Remove="Migrations\20191214180211_SomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214180211_SomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214180301_AddAirlinesAndSomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214180301_AddAirlinesAndSomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214180831_SomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214180831_SomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214180923_AddAirlinesAndSomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214180923_AddAirlinesAndSomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214181043_AddAirlinesAndSomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214181043_AddAirlinesAndSomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214181143_AddAirlinesAndSomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214181143_AddAirlinesAndSomeImprovement.Designer.cs" />
+    <Compile Remove="Migrations\20191214181649_AddAirlinesAndSomeImprovement.cs" />
+    <Compile Remove="Migrations\20191214181649_AddAirlinesAndSomeImprovement.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />

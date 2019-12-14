@@ -168,6 +168,7 @@ namespace ZTDB.SQLDatabase.Migrations
                         .HasColumnType("Numeric(18,2)");
 
                     b.Property<int?>("CancelCodeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<decimal?>("CarrierDelay")
@@ -176,7 +177,7 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<decimal>("DepartureDelay")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<int>("DestinationLocationId")
+                    b.Property<int?>("DestinationLocationId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Distance")
@@ -197,7 +198,7 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<int>("OpCarrierFlightNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("OriginLocationId")
+                    b.Property<int?>("OriginLocationId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PlannedArrivalTime")
@@ -258,26 +259,26 @@ namespace ZTDB.SQLDatabase.Migrations
             modelBuilder.Entity("ZTDB.SQLDatabase.Models.Flight", b =>
                 {
                     b.HasOne("ZTDB.SQLDatabase.Models.Airline", "Airline")
-                        .WithMany()
+                        .WithMany("Flights")
                         .HasForeignKey("AirlineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ZTDB.SQLDatabase.Models.CancelCode", "CancelCode")
-                        .WithMany()
-                        .HasForeignKey("CancelCodeId");
+                        .WithMany("Flights")
+                        .HasForeignKey("CancelCodeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ZTDB.SQLDatabase.Models.Location", "DestinationLocation")
-                        .WithMany()
+                        .WithMany("DestinationFlights")
                         .HasForeignKey("DestinationLocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.HasOne("ZTDB.SQLDatabase.Models.Location", "OriginLocation")
-                        .WithMany()
+                        .WithMany("OriginFlights")
                         .HasForeignKey("OriginLocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
                 });
 #pragma warning restore 612, 618
         }

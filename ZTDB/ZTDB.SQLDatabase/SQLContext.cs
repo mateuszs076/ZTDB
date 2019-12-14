@@ -21,6 +21,27 @@ namespace ZTDB.SQLDatabase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Flight>()
+                .HasOne(i => i.OriginLocation)
+                .WithMany(c => c.OriginFlights)
+                .HasForeignKey(a => a.OriginLocationId)
+                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Flight>()
+                .HasOne(i => i.DestinationLocation)
+                .WithMany(c => c.DestinationFlights)
+                .HasForeignKey(a => a.DestinationLocationId)
+                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Flight>()
+                .HasOne(i => i.Airline)
+                .WithMany(c => c.Flights)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Flight>()
+                .HasOne(i => i.CancelCode)
+                .WithMany(c => c.Flights)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
