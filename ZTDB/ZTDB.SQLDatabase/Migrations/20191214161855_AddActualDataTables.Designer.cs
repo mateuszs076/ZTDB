@@ -3,36 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZTDB.SQLDatabase;
 
 namespace ZTDB.SQLDatabase.Migrations
 {
     [DbContext(typeof(SQLContext))]
-    partial class SQLContextModelSnapshot : ModelSnapshot
+    [Migration("20191214161855_AddActualDataTables")]
+    partial class AddActualDataTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("ZTDB.SQLDatabase.Models.Airline", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Airlines");
-                });
 
             modelBuilder.Entity("ZTDB.SQLDatabase.Models.CancelCode", b =>
                 {
@@ -161,9 +148,6 @@ namespace ZTDB.SQLDatabase.Migrations
                     b.Property<decimal>("AirTime")
                         .HasColumnType("Numeric(18,2)");
 
-                    b.Property<int>("AirlineId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("ArrivalDelay")
                         .HasColumnType("Numeric(18,2)");
 
@@ -193,6 +177,9 @@ namespace ZTDB.SQLDatabase.Migrations
 
                     b.Property<decimal?>("NasDelay")
                         .HasColumnType("Numeric(18,2)");
+
+                    b.Property<string>("OpCarrier")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OpCarrierFlightNumber")
                         .HasColumnType("int");
@@ -229,8 +216,6 @@ namespace ZTDB.SQLDatabase.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AirlineId");
-
                     b.HasIndex("CancelCodeId");
 
                     b.HasIndex("DestinationLocationId");
@@ -257,12 +242,6 @@ namespace ZTDB.SQLDatabase.Migrations
 
             modelBuilder.Entity("ZTDB.SQLDatabase.Models.Flight", b =>
                 {
-                    b.HasOne("ZTDB.SQLDatabase.Models.Airline", "Airline")
-                        .WithMany()
-                        .HasForeignKey("AirlineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ZTDB.SQLDatabase.Models.CancelCode", "CancelCode")
                         .WithMany()
                         .HasForeignKey("CancelCodeId");
