@@ -12,7 +12,7 @@ namespace ZTDB.SQLDatabase
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=.\AREK-LAPTOP;Database=Flights;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=localhost;Database=Flights;User Id=sa;Password=admin123;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

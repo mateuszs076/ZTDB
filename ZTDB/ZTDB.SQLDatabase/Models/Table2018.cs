@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -8,6 +9,8 @@ namespace ZTDB.SQLDatabase.Models
     [Table("DataToImport")]
     public class DataToImport
     {
+        [Key]
+        public int Id { get; set; }
         public string FL_DATE { get; set; }
         public string OP_CARRIER { get; set; }
         public string OP_CARRIER_FL_NUM { get; set; }
