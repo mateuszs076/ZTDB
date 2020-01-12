@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using ZTDB.MongoDatabase;
 using ZTDB.MongoDatabase.Models;
 
@@ -13,21 +11,31 @@ namespace ZTDB.MainApp.Pages.Mongo.Flights
     {
         private static MongoContext _context = null;
         private readonly Stopwatch timer;
+
+        /// <summary>
+        /// Lista przechowująca dane do wyświetlenia na froncie
+        /// </summary>
         public IList<Flight> Flight { get; set; }
+
+        /// <summary>
+        /// Czas operacji na bazie do wyświetlenia na froncie
+        /// </summary>
         public TimeSpan OperationTIme { get; set; }
 
         public IndexModel()
-        { 
-            if(_context == null)
+        {
+            if (_context == null)
                 _context = new MongoContext();
             timer = new Stopwatch();
         }
 
-
         public void OnGet()
         {
             timer.Restart();
-            Flight =  _context.Get(10);
+
+            //pobranie 10 lotów
+            Flight = _context.Get(10);
+
             timer.Stop();
             OperationTIme = timer.Elapsed;
         }
