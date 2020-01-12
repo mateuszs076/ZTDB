@@ -20,8 +20,9 @@ namespace ZTDB.MongoDatabase
         /// <returns></returns>
         public List<Flight> Get() =>
           _flights.Find(a => true).ToList();
+
         public List<Flight> Get(int limit) =>
-          _flights.Find(a => true).SortBy(a => a.Id).Limit(limit).ToList();
+          _flights.Find(a => true).Limit(limit).ToList();
 
         public Flight Get(string id) =>
             _flights.Find<Flight>(a => a.Id == id).FirstOrDefault();

@@ -10,6 +10,9 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<p>
+    <h3>Czas operacji @Html.DisplayFor(model => model.OperationTIme)</h3>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -95,92 +98,93 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Flight) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Airline.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpCarrierFlightNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OriginLocation.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DestinationLocation.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlannedDepartureTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActualDepartureTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaxiOut)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaxiIn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WheelsOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WheelsOff)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlannedArrivalTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActualArrivalTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CancelCode.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diverted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlannedElapsedTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActualElapsedTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AirTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarrierDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WeatherDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NasDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecurityDelay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LateAircraftDelay)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Flight)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpCarrierFlightNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginLocation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationLocation.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlannedDepartureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualDepartureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxiOut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxiIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WheelsOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WheelsOff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlannedArrivalTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualArrivalTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CancelCode.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diverted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlannedElapsedTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActualElapsedTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarrierDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeatherDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NasDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SecurityDelay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LateAircraftDelay)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

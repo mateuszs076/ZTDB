@@ -1,0 +1,197 @@
+﻿@page
+@model ZTDB.MainApp.Pages.Mongo.Flights.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<p>
+    <h3>Czas operacji @Html.DisplayFor(model => model.OperationTIme)</h3>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].FL_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].OP_CARRIER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].OP_CARRIER_FL_NUM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].ORIGIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].DEST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CRS_DEP_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].DEP_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].DEP_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].TAXI_OUT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].WHEELS_OFF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].TAXI_IN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].WHEELS_ON)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CRS_ARR_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].ARR_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].ARR_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CANCELLED)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CANCELLATION_CODE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].DIVERTED)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CRS_ELAPSED_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].ACTUAL_ELAPSED_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].AIR_TIME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].DISTANCE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].CARRIER_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].WEATHER_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].NAS_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].SECURITY_DELAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].LATE_AIRCRAFT_DELAY)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Flight)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FL_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OP_CARRIER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OP_CARRIER_FL_NUM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORIGIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRS_DEP_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEP_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEP_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAXI_OUT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WHEELS_OFF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAXI_IN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WHEELS_ON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRS_ARR_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ARR_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ARR_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CANCELLED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CANCELLATION_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIVERTED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRS_ELAPSED_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTUAL_ELAPSED_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AIR_TIME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DISTANCE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CARRIER_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WEATHER_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAS_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SECURITY_DELAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LATE_AIRCRAFT_DELAY)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
